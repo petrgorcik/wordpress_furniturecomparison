@@ -17,7 +17,7 @@ MySQL database tables
 - **oxek_cust_seller** – information about affiliate partner and part of code used in link to affiliate product
 
 
-Cahange collation as you need in create table codes below:
+Change collation as you need in create table codes below:
 
 CREATE TABLE IF NOT EXISTS **`oxek_cust_products`** (
   `item_id` varchar(40) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL COMMENT 'Unique identification of product in eshop',
