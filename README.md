@@ -75,3 +75,12 @@ CREATE TABLE IF NOT EXISTS `oxek_cust_seller` (
   `affil_part` varchar(200) COLLATE utf8_czech_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci COMMENT='information about sellers';
+
+
+<img width="960" alt="wordpress_furniturecomparison-1" src="https://user-images.githubusercontent.com/10530501/185609933-aa766e33-c167-4159-8635-79b0288be5f2.png">
+
+
+<img width="960" alt="wordpress_furniturecomparison-2" src="https://user-images.githubusercontent.com/10530501/185609959-f268af41-a5dc-4cf4-9d16-5d0cc3b1cbf4.png">
+
+
+
