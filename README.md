@@ -1,26 +1,25 @@
 # wordpress_furniturecomparison
-WordPress theme furniturecomparison provides solution for furniture comparison websites
-wordpress_furniturecomparison
+wordpress_furniturecomparison is WordPress theme for **furniture comparison websites**
 
 - provides solution for furniture comparison
-- works well as child theme of Twenty Sixteen 2.0 or 2.7 version.
-- prevents to open link to affiliate partners until cookies is confirmed (suppose using plugin Complianz | GDPR/CCPA Cookie for cookies banner).
+- works well as **child theme of Twenty Sixteen 2.0 or 2.7 version**
+- **prevents to open link to affiliate partners until cookies is confirmed** (suppose using plugin Complianz | GDPR/CCPA Cookie for cookies banner)
 
-- page-comparison-final.php – wordpress page template for for furniture comparison page. Create new page in wordpress and choose this page template.
+- **page-comparison-final.php** – WordPress page template for for furniture comparison page. Create new page in wordpress and choose this page template
 
-- page-download-xml-public.php – wordpress page template for download xml file to MySQL database. Links for xml sources need to be updated. Depending on XML source files and their specifications, this file needs to be edited or you need create new . Create new page in wordpress and choose this page template. Then you can set cron to open this page. After page is open, data are downloaded from xml sources, saved to target location and uploaded to database.
+- **page-download-xml-public.php** – WordPress page template for download xml file to MySQL database. Links for xml sources need to be updated. Depending on XML source files and their specifications, this file needs to be edited or you need create new . Create new page in wordpress and choose this page template. Then you can set cron to open this page. After page is open, data are downloaded from xml sources, saved to target location and uploaded to database.
 
 MySQL database tables 
 
-oxek_cust_products – product data
-oxek_cust_products_dev – can be used for test purpose, download to this table can be set in page-download-xml-public.php
-oxek_cust_products_insert_data_info – information about inserts to table
-oxek_cust_seller – information about affiliate partner and part of code used in link to affiliate product
+- **oxek_cust_products** – product data
+- **oxek_cust_products_dev** – can be used for test purpose, download to this table can be set in page-download-xml-public.php
+- **oxek_cust_products_insert_data_info** – information about inserts to table
+- **oxek_cust_seller** – information about affiliate partner and part of code used in link to affiliate product
 
 
 Cahange collation as you need in create table codes below:
 
-CREATE TABLE IF NOT EXISTS `oxek_cust_products` (
+CREATE TABLE IF NOT EXISTS **`oxek_cust_products`** (
   `item_id` varchar(40) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL COMMENT 'Unique identification of product in eshop',
   `seller` smallint(6) NOT NULL,
   `productname` varchar(200) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
@@ -39,11 +38,11 @@ CREATE TABLE IF NOT EXISTS `oxek_cust_products` (
   KEY `seller` (`seller`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Custom table used for saving products';
 
-ALTER TABLE `oxek_cust_products`
+ALTER TABLE **`oxek_cust_products`**
   ADD CONSTRAINT `oxek_cust_products_ibfk_1` FOREIGN KEY (`seller`) REFERENCES `oxek_cust_seller` (`id`);
 
 
-CREATE TABLE IF NOT EXISTS `oxek_cust_products_dev` (
+CREATE TABLE IF NOT EXISTS **`oxek_cust_products_dev`** (
   `item_id` varchar(40) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL COMMENT 'Unique identification of product in eshop',
   `seller` smallint(6) NOT NULL,
   `productname` varchar(200) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
@@ -61,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `oxek_cust_products_dev` (
   KEY `seller` (`seller`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Custom table used for saving products';
 
-CREATE TABLE IF NOT EXISTS `oxek_cust_products_insert_data_info` (
+CREATE TABLE IF NOT EXISTS **`oxek_cust_products_insert_data_info`** (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `is_product_table` tinyint(2) DEFAULT NULL,
@@ -69,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `oxek_cust_products_insert_data_info` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci AUTO_INCREMENT=544 ;
 
-CREATE TABLE IF NOT EXISTS `oxek_cust_seller` (
+CREATE TABLE IF NOT EXISTS **`oxek_cust_seller`** (
   `id` smallint(6) NOT NULL,
   `name` varchar(50) COLLATE utf8_czech_ci NOT NULL,
   `affil_part` varchar(200) COLLATE utf8_czech_ci NOT NULL,
